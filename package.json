@@ -1,0 +1,48 @@
+{
+  "name": "red_revolution",
+  "version": "1.0.0",
+  "description": "我们都是奋斗的人",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.6.2",
+    "core-js": "^3.2.1",
+    "lodash": "^4.17.15",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^6.0.0",
+    "img-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.1.2",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-merge": "^4.2.2",
+    "webpackbar": "^4.0.0"
+  },
+  "scripts": {
+    "dev": "npx webpack-dev-server",
+    "build": "npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@e.coding.net:codingboy/red.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
