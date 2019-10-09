@@ -16,6 +16,18 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          },
+          'css-loader'
+        ]
+      },
+      {
         test: /\.sass|scss$/i,
         use: [
           {
@@ -36,7 +48,7 @@ module.exports = merge(common, {
       parallel: true,
     }),
     new OptimizeCssAssetsPlugin()
-  ]
+    ]
   },
   mode: "production"
 })

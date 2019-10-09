@@ -1,8 +1,5 @@
-import { print } from './lib';
 import './style.scss';
+import 'pure-full-page/lib/pureFullPage.min.css';
+import PureFullPage from 'pure-full-page';
 
-print();
-
-const afrom = Array.from("hello!");
-console.log("This is index.js", afrom);
-
+new PureFullPage().init();

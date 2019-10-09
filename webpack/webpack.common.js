@@ -8,7 +8,7 @@ module.exports = {
     admin: "./src/hello.js"
   },
   output: {
-    path: path.resolve(__dirname,"..", "dist"),
+    path: path.resolve(__dirname, "..", "dist"),
     filename: "js/[name]-[hash].bundle.js"
   },
   module: {
@@ -48,6 +48,7 @@ module.exports = {
       template: './public/index.html',
       chunks: ['index']
     }),
+
     new WebpackBar()
   ]
 }

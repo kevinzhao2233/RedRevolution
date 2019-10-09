@@ -1,13 +1,29 @@
-$color: #ff6700;
+$theme-color: #CD010C;    // 主色调
+$theme-color-2: #D8311E;  // 辅助色调
+$color-3: #FFD476;      // 非活动色
+$color-4: #EF8F55;      // 活动色
+$color-white: #fff;
+$color-black: #212121;
 
-body {
-  h1 {
-    color: $color;
-  }
-  .bg {
-    width: 200px;
-    height: 200px;
-    background: url(./img/1.jpg) no-repeat;
-    background-size: cover;
-  }
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page p {
+  font-size: 66px;
+}
+
+.page:nth-child(1) {
+  background: lightpink no-repeat center/cover;
+}
+
+.page:nth-child(2) {
+  background: lightgreen no-repeat center/cover;
+}
+
+.page:nth-child(3) {
+  background: lightskyblue no-repeat center/cover;
 }
