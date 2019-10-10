@@ -1,0 +1,26 @@
+$color-white: #fff;
+$color-white-t: rgba(255, 255, 255, 0);
+$color-black: #000;
+
+@keyframes mouse-down {
+  0% {
+    background-color: $color-white-t;
+    transform: translateY(0);
+  }
+  20% {
+    background-color: $color-white;
+    transform: translateY(0);
+  }
+  40% {
+    background-color: $color-white;
+    transform: translateY(1.2em);
+  }
+  80% {
+    background-color: $color-white-t;
+    transform: translateY(1.2em)
+  }
+  100% {
+    background-color: $color-white-t;
+    transform: translateY(-1.2em);
+  }
+}

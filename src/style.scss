@@ -1,29 +1,108 @@
-$theme-color: #CD010C;    // 主色调
-$theme-color-2: #D8311E;  // 辅助色调
-$color-3: #FFD476;      // 非活动色
-$color-4: #EF8F55;      // 活动色
+@import './style/animation.scss';
+
+$theme-color: #CD010C; // 主题色
+$theme-color-2: #D8311E; // 辅助色
+$color-3: #FFD476; // 非活动色
+$color-4: #EF8F55; // 活动色
 $color-white: #fff;
-$color-black: #212121;
+$color-black: #35495E;
+
+$font-kai: KaiTi, FangSong;
+
+
+.no-display {
+  display: none;
+}
+
+.font-tit {
+  font-family: 'Ma Shan Zheng', cursive;
+}
 
 
 .page {
   display: flex;
   justify-content: center;
-  align-items: center;
+  background-color: $theme-color;
+
+  .content {
+    position: relative;
+    width: 1260px;
+
+    .title {
+      margin: 100px auto 40px auto;
+      text-align: center;
+      font-size: 10em;
+      color: $color-3;
+      text-shadow: 5px 5px 6px $color-4;
+    }
+
+    .descript {
+      font-size: 3em;
+      color: $color-white;
+      text-align: center;
+    }
+
+    .btn-box {
+      margin: 60px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 400px;
+      font-size: 1.2em;
+      font-family: $font-kai;
+      color: $color-white;
+
+      .btn-both {
+        padding: 12px 36px;
+        cursor: pointer;
+        box-sizing: border-box;
+        border-radius: 5em;
+      }
+
+      .btn-1 {
+        color: $color-black;
+        font-weight: 600;
+        background-color: $color-3;
+      }
+
+      .btn-2 {
+        border: 1px solid $color-3;
+      }
+
+      .btn-descript {
+        font-size: 0.8em;
+      }
+    }
+
+    .down {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+      height: 100px;
+      bottom: 0;
+
+      .down-box {
+        display: flex;
+        justify-content: center;
+        width: 1.6em;
+        height: 2.5em;
+        border: 2px solid $color-white;
+        border-radius: 1em;
+
+        .down-anim {
+          margin: .2em 0;
+          width: .4em;
+          height: .8em;
+          background-color: $color-white;
+          border-radius: 1em;
+          animation: mouse-down 2s ease-in-out infinite both;
+        }
+      }
+    }
+  }
 }
 
-.page p {
+.page .temp-mark {
   font-size: 66px;
-}
-
-.page:nth-child(1) {
-  background: lightpink no-repeat center/cover;
-}
-
-.page:nth-child(2) {
-  background: lightgreen no-repeat center/cover;
-}
-
-.page:nth-child(3) {
-  background: lightskyblue no-repeat center/cover;
 }

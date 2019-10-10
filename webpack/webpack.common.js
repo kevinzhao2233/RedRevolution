@@ -5,7 +5,6 @@ const WebpackBar = require('webpackbar');
 module.exports = {
   entry: {
     index: "./src/index.js",
-    admin: "./src/hello.js"
   },
   output: {
     path: path.resolve(__dirname, "..", "dist"),
@@ -37,18 +36,11 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'admin',
-      filename: 'admin.html',
-      template: './public/index.html',
-      chunks: ['admin']
-    }),
-    new HtmlWebpackPlugin({
       title: 'My App',
       filename: 'index.html',
       template: './public/index.html',
       chunks: ['index']
     }),
-
     new WebpackBar()
   ]
 }
