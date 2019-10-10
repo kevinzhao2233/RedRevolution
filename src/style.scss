@@ -1,3 +1,5 @@
+@import './style/init.scss';
+@import './style/comment.scss';
 @import './style/animation.scss';
 
 $theme-color: #CD010C; // 主题色
@@ -7,7 +9,8 @@ $color-4: #EF8F55; // 活动色
 $color-white: #fff;
 $color-black: #35495E;
 
-$font-kai: KaiTi, FangSong;
+$font-kai: KaiTi,
+FangSong;
 
 
 .no-display {
@@ -23,8 +26,9 @@ $font-kai: KaiTi, FangSong;
   display: flex;
   justify-content: center;
   background-color: $theme-color;
+  overflow: hidden;
 
-  .content {
+  .first-content {
     position: relative;
     width: 1260px;
 
@@ -101,8 +105,172 @@ $font-kai: KaiTi, FangSong;
       }
     }
   }
+
+  .video-page-content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+
+    .video-box {
+      display: flex;
+
+      .video-con {
+        margin: 2em 3em 0 3em;
+
+        video {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .tit {
+        font-size: 4em;
+        color: $color-3;
+        line-height: 1em;
+        white-space: pre;
+      }
+    }
+
+    .text {
+      display: flex;
+
+      .praise {
+        font-size: 2em;
+        color: $color-white;
+        line-height: 1em;
+      }
+
+      .discript {
+        width: 70%;
+        font-family: $font-kai;
+        line-height: 2em;
+        color: $color-white;
+      }
+    }
+  }
+
+  .video-right {
+    .video-box {
+      flex: 6;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      .video-con {
+        flex: 6;
+      }
+
+      .tit {
+        flex: 4;
+        text-align: end;
+      }
+    }
+
+    .text {
+      flex: 3;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  .video-left {
+    .video-box {
+      flex: 6;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      .video-con {
+        flex: 6;
+      }
+
+      .tit {
+        flex: 4;
+        line-height: 1.2em;
+      }
+    }
+
+    .text {
+      flex: 3;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      .praise {
+        text-align: end;
+      }
+    }
+  }
+
+  .video-left-down {
+    .video-box {
+      flex: 6;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-end;
+
+      .video-con {
+        flex: 6;
+      }
+
+      .tit-box {
+        flex: 4;
+        display: flex;
+        justify-content: center;
+
+        .tit {
+          line-height: 1.2em;
+          writing-mode: vertical-rl;
+          writing-mode: tb-rl;
+          white-space: pre;
+        }
+      }
+    }
+
+    .text {
+      flex: 3;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      .praise {
+        text-align: end;
+      }
+    }
+  }
+
+  .video-only {
+    width: 80%;
+    background-color: #000;
+    margin: 1em 2em;
+    border-radius: 1em;
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
-.page .temp-mark {
-  font-size: 66px;
+
+.video-p1 {
+  background: url(./img/1-1.png) no-repeat;
+  background-size: cover;
+}
+
+.video-p2 {
+  background: url(./img/1-2.jpg) no-repeat;
+  background-size: cover;
+
+  .video-page-content .video-box .tit {
+    color: $color-white;
+  }
+}
+
+.video-p3 {
+  background: url(./img/1-2.jpg) no-repeat;
 }
