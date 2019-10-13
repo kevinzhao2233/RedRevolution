@@ -3,7 +3,7 @@
     
   }
   100% {
-    transform: translateX(-400px);
+    transform: translateX(-1200px);
   }
 }
 
@@ -34,10 +34,10 @@
     // overflow: hidden;
     .track {
       position: relative;
-      background-color: #98BBFF;
-      width: 200%;
+      // background-color: #98BBFF;
       height: 64px;
-      border-bottom: #fff 1px solid;
+      // border-bottom: #fff 1px solid;
+      overflow: hidden;
       p {
         position: absolute;
         display: inline-block;
@@ -50,7 +50,7 @@
         z-index: 100;
         white-space:nowrap;
         transform: translateX(1000px);
-        animation: barrage 10s .5s linear forwards;
+        animation: barrage 16s .4s linear forwards;
       }
     }
   }
