@@ -1,3 +1,123 @@
+@keyframes barrage {
+  0% {
+    
+  }
+  100% {
+    transform: translateX(-400px);
+  }
+}
+
+
+
 .page .comment-page {
-  
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .hand-img {
+    flex: 2;
+    text-align: center;
+  }
+
+  .barrage {
+    flex: 2;
+    width: 1000px;
+    background-color: rgba($color: #FF6600, $alpha: 0.1);
+    border-radius: 1em;
+    box-sizing: border-box;
+    padding: 1em;
+    margin: 20px 0;
+    // overflow: hidden;
+    .track {
+      position: relative;
+      background-color: #98BBFF;
+      width: 200%;
+      height: 64px;
+      border-bottom: #fff 1px solid;
+      p {
+        position: absolute;
+        display: inline-block;
+        border-radius: 1em;
+        padding: .3em 1.4em;
+        margin: 14px 0;
+        background-color: rgba($color: #ff6600, $alpha: 0.5);
+        color: #fff;
+        font-size: 1.2em;
+        z-index: 100;
+        white-space:nowrap;
+        transform: translateX(1000px);
+        animation: barrage 10s .5s linear forwards;
+      }
+    }
+  }
+
+  .comment-box {
+    flex: 1;
+    overflow: hidden;
+    width: 1000px;
+
+    .comment {
+      .vwrap {
+        border: 2px solid #D8311E;
+        border-radius: 1em;
+
+        .vheader {
+          display: none;
+        }
+
+        .vedit {
+          padding-top: 0;
+          width: 800px;
+          float: left;
+
+          #veditor {
+            min-height: 1em;
+            font-size: 1em;
+            padding-top: 0;
+          }
+
+          .vinput {
+            resize: none;
+          }
+
+          .vctrl {
+            display: none;
+          }
+        }
+
+        .vcontrol {
+          width: 100px;
+          float: right;
+
+          div {
+            &:nth-child(1) {
+              display: none;
+            }
+          }
+
+          .vbtn:active,
+          .vbtn:hover {
+            color: #D8311E;
+            border-color: #D8311E;
+            background-color: #fff;
+          }
+        }
+      }
+
+      .vempty {
+        display: none;
+      }
+
+      .info {
+        display: none;
+      }
+    }
+    .vlist {
+      display: none;
+    }
+  }
 }

@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.6.2",
+    "babel-runtime": "^6.26.0",
     "core-js": "^3.2.1",
     "lodash": "^4.17.15",
     "pure-full-page": "^1.0.6",

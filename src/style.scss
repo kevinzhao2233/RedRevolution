@@ -28,49 +28,93 @@ FangSong;
   background-color: $theme-color;
   overflow: hidden;
 
+  &:nth-child(1) {
+    background-image: url(./img/0-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  }
+
   .first-content {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 1260px;
 
     .title {
-      margin: 100px auto 40px auto;
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       text-align: center;
-      font-size: 10em;
-      color: $color-3;
-      text-shadow: 5px 5px 6px $color-4;
+
+      h1 {
+        font-size: 5.6em;
+        color: $theme-color-2;
+        font-weight: normal;
+        text-shadow: 4px 4px 1px #FFF446;
+        &:nth-child(2) {
+          text-indent: 1em;
+        }
+      }
+
+      span {
+        font-size: 1.4em;
+
+        &:nth-child(1) {
+          line-height: 1.4em;
+          vertical-align: text-bottom;
+        }
+
+        &:nth-child(3) {
+          line-height: 1.2em;
+          vertical-align: bottom;
+          font-size: 2em;
+        }
+
+        &:nth-child(4) {
+          line-height: 0.6em;
+          vertical-align: bottom;
+          font-size: 1.5em;
+        }
+      }
     }
 
     .descript {
+      flex: 1;
       font-size: 3em;
-      color: $color-white;
+      color: $color-black;
       text-align: center;
+      line-height: 1em;
     }
 
     .btn-box {
-      margin: 60px auto;
+      flex: 2;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      width: 400px;
+      justify-content: center;
+      align-items: flex-start;
       font-size: 1.2em;
       font-family: $font-kai;
-      color: $color-white;
+      color: $color-black;
 
       .btn-both {
-        padding: 12px 36px;
+        margin: 0 30px;
+        padding: 8px 32px;
         cursor: pointer;
         box-sizing: border-box;
         border-radius: 5em;
+        font-weight: 600;
       }
 
       .btn-1 {
-        color: $color-black;
-        font-weight: 600;
-        background-color: $color-3;
+        color: $color-white;
+        background-color: $theme-color-2;
+        border: 2px solid $theme-color-2;
       }
 
       .btn-2 {
-        border: 1px solid $color-3;
+        border: 2px solid $theme-color-2;
       }
 
       .btn-descript {
@@ -79,12 +123,10 @@ FangSong;
     }
 
     .down {
+      flex: 1;
       display: flex;
       justify-content: center;
-      position: absolute;
-      width: 100%;
-      height: 100px;
-      bottom: 0;
+      align-items: center;
 
       .down-box {
         display: flex;
@@ -106,10 +148,21 @@ FangSong;
     }
   }
 
+  .grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/grid.png);
+    background-repeat: repeat;
+    z-index: 1;
+  }
+
   .video-page-content {
     display: flex;
     flex-direction: column;
     width: 90%;
+    box-sizing: border-box;
+    z-index: 10;
 
     .video-box {
       display: flex;
@@ -141,7 +194,7 @@ FangSong;
       }
 
       .discript {
-        width: 70%;
+        width: 50%;
         font-family: $font-kai;
         line-height: 2em;
         color: $color-white;
@@ -226,6 +279,9 @@ FangSong;
           writing-mode: vertical-rl;
           writing-mode: tb-rl;
           white-space: pre;
+          span {
+            font-size: 1.4em;
+          }
         }
       }
     }
@@ -257,9 +313,11 @@ FangSong;
 }
 
 
+
 .video-p1 {
   background: url(./img/1-1.png) no-repeat;
   background-size: cover;
+  // background-position: 0 -150px;
 }
 
 .video-p2 {

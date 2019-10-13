@@ -12,7 +12,7 @@
     [
       "@babel/plugin-transform-runtime",
       {
-        "corejs": false // 可选 false | 2 | 3
+        "corejs": 3 // 可选 false | 2 | 3
       }
     ]
   ]
