@@ -1,3 +1,5 @@
+import '../img/icon/iconfont';
+
 new Valine({
   av: AV,
   el: '#comment', // 评论挂载点的 DOM
@@ -6,6 +8,18 @@ new Valine({
   placeholder: '在这里写下想对祖国或者先烈们说的话吧，最多50个字符哦', // 留言框占位提示文字
   pageSize: 49
 });
+
+// 弹幕文字前面的小图标
+const icon = [
+  '#icon-guoqing',
+  '#icon-guoqingzhuanlan',
+  '#icon-Holiday-icon_guoqing',
+  '#icon-guoqing-',
+  '#icon-guoqing1',
+  '#icon-guoqing-1',
+  '#icon-guoqing2',
+  '#icon-guoqing3',
+]
 
 let commentBackup = [];
 
@@ -20,13 +34,19 @@ function getElementProp() {
   const barrage = document.querySelector('#barrage');   // 弹幕的大盒子
   const track = document.querySelectorAll('.track');     // 弹幕弹道
   const bullet = document.querySelectorAll('.track p');   // 子弹
-  const commentLists = document.getElementsByClassName('vcontent');   // 评论的话
+  const commentLists = document.querySelectorAll('.vcontent p');   // 评论的话
   return ({ barrage, track, bullet, commentLists });
 }
 
 // ========== 创建文档碎片，加入弹幕
-function createDocumentFragment(txt) {      // 获取 Node 的字符串形式，转换成 Node 节点
-  const template = `${txt}`;
+function createDocumentFragment(txt, icon) {      // 获取 Node 的字符串形式，转换成 Node 节点
+  const template = `
+  <p>
+    <svg class="icon" aria-hidden="true">
+      <use xlink: href="${icon}"></use>
+    </svg>
+    <span>${txt}</span>
+  </p>`;
   let frag = document.createRange().createContextualFragment(template);
   return frag;
 }
@@ -35,25 +55,21 @@ function createDocumentFragment(txt) {      // 获取 Node 的字符串形式，
 const getComment = (commentLists) => {
   const comment = [];
   for (let com of commentLists) {
-    comment.unshift(com.innerHTML.trim());    // 这里会返回一个数组长度，需要的时候记得过来
+    comment.push(com.innerHTML.trim());    // 这里会返回一个数组长度，需要的时候记得过来
   }
-  console.log(comment);
+  console.log('comment[]', comment);
   return comment;
 }
 
 // ========== 弹幕主体函数 =========== //
-const barrageAnimation = (newComm) => {
+const barrageAnimation = () => {
   const elementProp = getElementProp();
   const bulletMarginR = getComputedStyle(elementProp.bullet[0], null).marginRight; // 子弹 margin-right
   const comment = getComment(elementProp.commentLists);          // 保存着已经存在的评论，评论为带有 p 标签的
   commentBackup = [...comment];
-  console.log(commentBackup)
   let index = 0;                      // 用来循环数组的变量
+  let iconIndex = 0                   // 用来循环icon的变量
 
-  if (!!newComm) {
-    comment.unshift(newComm);
-  }
-  
   function loadComm() {
     const comm = comment[index];
     index++;
@@ -61,6 +77,15 @@ const barrageAnimation = (newComm) => {
       index = 0;
     }
     return comm;
+  }
+
+  function loadIcon(icons) {
+    const icon = icons[iconIndex];
+    iconIndex++;
+    if (iconIndex >= icons.length) {
+      iconIndex = 0;
+    }
+    return icon;
   }
 
   setInterval(() => {
@@ -72,7 +97,8 @@ const barrageAnimation = (newComm) => {
         }
         if ((lastElem.clientLeft + lastElem.width + parseInt(bulletMarginR)) < (barrage.clientWidth + barrage.getBoundingClientRect().left)) {
           const comm = loadComm();   // 获取到即将加载到屏幕的评论
-          track.appendChild(createDocumentFragment(comm));
+          const iconf = loadIcon(icon);
+          track.appendChild(createDocumentFragment(comm, iconf));
         }
       } else {
         // TODO: 有轨道没有子弹
@@ -90,36 +116,18 @@ const barrageAnimation = (newComm) => {
       }
     }
 
-  }, 789);
+  }, 489);
 }
 
-document.addEventListener('click', function (e) {
-  if (e.target.classList.value == 'vsubmit vbtn') {
-    submitComm();
-  }
-})
-document.addEventListener('keyup', function (e) {
-  if (e.keyCode == 13 && e.ctrlKey) {
-    submitComm();
-  }
-})
-
-// ========== 提交按钮
-const submitComm = () => {
-  console.log('提交评论成功');
+// ========= 监听有没有评论被加到 DOM 结构，有的话，就调用弹幕函数
+const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+const vlist = document.querySelector('.vlist');
+const Observer = new MutationObserver(function () {
   setTimeout(() => {
-    const submitValue = document.getElementsByClassName('vcontent')[0].innerHTML.trim();
-    if (submitValue === commentBackup[commentBackup.length - 1]) {
-      console.log('没有新的评论列表');
-    } else {
-      console.log(submitValue, '有新的评论')
-      barrageAnimation(submitValue);
-    }
-  }, 400);
-}
-
-
-
-setTimeout(() => {
-  barrageAnimation();
-}, 1200);
+    barrageAnimation();
+  }, 200);
+});
+Observer.observe(vlist, {
+  childList: true,
+  subtree: true
+});

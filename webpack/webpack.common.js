@@ -26,7 +26,6 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              // limit: 20000, /* 图片大小小于1000字节限制时会自动转成 base64 码引用*/
               outputPath: 'img',      //输出文件夹
             }
           }
