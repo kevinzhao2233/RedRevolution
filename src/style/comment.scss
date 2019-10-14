@@ -37,7 +37,7 @@
       // background-color: #98BBFF;
       height: 64px;
       // border-bottom: #fff 1px solid;
-      overflow: hidden;
+      // overflow: hidden;
       p {
         position: absolute;
         display: inline-block;
@@ -50,7 +50,7 @@
         z-index: 100;
         white-space:nowrap;
         transform: translateX(1000px);
-        animation: barrage 16s .4s linear forwards;
+        animation: barrage 16s .1s linear forwards;
       }
     }
   }
