@@ -39,12 +39,16 @@
       // border-bottom: #fff 1px solid;
       // overflow: hidden;
 
+      .active {
+        border: 2px solid #D8311E;
+      }
+
       p {
         position: absolute;
         display: inline-block;
         height: 1.6em;
         border-radius: 2em;
-        padding: .2em 1.4em .2em .2em;
+        padding: .2em 1.4em .2em .5em;
         margin: 14px 0;
         background-color: rgba($color: #ff6600, $alpha: 0.5);
         color: #fff;
@@ -55,6 +59,7 @@
         white-space: nowrap;
         transform: translateX(1000px);
         animation: barrage 16s .1s linear forwards;
+
 
         .icon {
           margin-right: .2em;

@@ -21,7 +21,7 @@ const icon = [
   '#icon-guoqing3',
 ]
 
-let commentBackup = [];
+let newCommentValue = '';
 
 // ========== 为用户体验，限制评论的长度为50字；
 const editor = document.querySelector('#veditor');
@@ -39,9 +39,15 @@ function getElementProp() {
 }
 
 // ========== 创建文档碎片，加入弹幕
-function createDocumentFragment(txt, icon) {      // 获取 Node 的字符串形式，转换成 Node 节点
+function createDocumentFragment(txt, icon, isNewCom) {      // 获取 Node 的字符串形式，转换成 Node 节点
+  let newComClass = "";
+  if (!!isNewCom) {
+    newComClass = "active";
+  } else {
+    newComClass = "";
+  }
   const template = `
-  <p>
+  <p class="${newComClass}">
     <svg class="icon" aria-hidden="true">
       <use xlink: href="${icon}"></use>
     </svg>
@@ -66,7 +72,7 @@ const barrageAnimation = () => {
   const elementProp = getElementProp();
   const bulletMarginR = getComputedStyle(elementProp.bullet[0], null).marginRight; // 子弹 margin-right
   const comment = getComment(elementProp.commentLists);          // 保存着已经存在的评论，评论为带有 p 标签的
-  commentBackup = [...comment];
+  // commentBackup = [...comment];
   let index = 0;                      // 用来循环数组的变量
   let iconIndex = 0                   // 用来循环icon的变量
 
@@ -98,10 +104,14 @@ const barrageAnimation = () => {
         if ((lastElem.clientLeft + lastElem.width + parseInt(bulletMarginR)) < (barrage.clientWidth + barrage.getBoundingClientRect().left)) {
           const comm = loadComm();   // 获取到即将加载到屏幕的评论
           const iconf = loadIcon(icon);
-          track.appendChild(createDocumentFragment(comm, iconf));
+          if (newCommentValue == comm) {
+            const newC = true;
+            track.appendChild(createDocumentFragment(comm, iconf, newC));
+            newCommentValue = '';
+          } else {
+            track.appendChild(createDocumentFragment(comm, iconf));
+          }
         }
-      } else {
-        // TODO: 有轨道没有子弹
       }
 
       // ========= 删掉已经走出区域的弹幕
@@ -115,9 +125,20 @@ const barrageAnimation = () => {
         }
       }
     }
-
   }, 489);
 }
+
+document.addEventListener('click', function (e) {
+  if (e.target.innerHTML == '回复') {
+    newCommentValue = document.querySelector('#veditor').value;
+  }
+})
+
+document.addEventListener('keydown', function (e) {
+  if (13 == e.keyCode && e.ctrlKey) {
+    newCommentValue = document.querySelector('#veditor').value;
+  }
+})
 
 // ========= 监听有没有评论被加到 DOM 结构，有的话，就调用弹幕函数
 const MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
