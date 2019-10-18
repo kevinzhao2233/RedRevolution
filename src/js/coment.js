@@ -25,7 +25,7 @@ let newCommentValue = '';
 
 // ========== 为用户体验，限制评论的长度为50字；
 const editor = document.querySelector('#veditor');
-if (editor) {
+if (!!editor) {
   editor.maxLength = 50;
 }
 

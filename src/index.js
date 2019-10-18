@@ -10,7 +10,7 @@ loading.style.display = 'none';
 
 
 /* ============== 模拟点击事件 方便调试 ================*/
-const defaultPage = document.querySelectorAll('.nav-dot')[10];
+const defaultPage = document.querySelectorAll('.nav-dot')[3];
 
 const ev = new MouseEvent('click', {
   cancelable: true,
