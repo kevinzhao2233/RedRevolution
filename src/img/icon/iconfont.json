@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "883394",
+      "name": "博客",
+      "font_class": "boke",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
       "icon_id": "4882433",
       "name": "国庆",
       "font_class": "guoqing",
@@ -18,6 +25,20 @@
       "font_class": "guoqingzhuanlan",
       "unicode": "e739",
       "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "7334992",
+      "name": "github",
+      "font_class": "git",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "10369027",
+      "name": "微信",
+      "font_class": "weixin1",
+      "unicode": "e621",
+      "unicode_decimal": 58913
     },
     {
       "icon_id": "10763006",

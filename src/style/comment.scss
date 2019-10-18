@@ -17,9 +17,16 @@
   align-items: center;
   width: 100%;
 
-  .hand-img {
+  .hand {
     flex: 2;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 6em;
+      color: #D8311E;
+      text-shadow: 5px 5px 1px #FFE;
+    }
   }
 
   .barrage {
@@ -30,10 +37,8 @@
     background-size: cover;
     border-radius: 1em;
     box-sizing: border-box;
-    padding: 1em;
+    padding: 1em 0;
     margin: 20px 0;
-
-    // overflow: hidden;
     .track {
       position: relative;
       height: 64px;
@@ -49,8 +54,8 @@
         height: 1.6em;
         border-radius: 2em;
         padding: .2em 1.4em .2em .5em;
-        margin: 14px 0;
-        background-color: rgba($color: #ff6600, $alpha: 0.5);
+        margin: 14px 20px;
+        background-color: rgba($color: #AA9, $alpha: 0.3);
         color: #fff;
         font-size: 1.2em;
         vertical-align: top;
@@ -91,6 +96,7 @@
       .vwrap {
         border: 2px solid #D8311E;
         border-radius: 1em;
+        background-color: rgba($color: #fff, $alpha: 0.8);
 
         .vheader {
           display: none;

@@ -1,0 +1,219 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  .about {
+    flex: 1;
+    background: url(./img/3-1.png) no-repeat;
+    background-size: cover;
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      width: 1000px;
+      height: 100%;
+
+      .tit {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        h1 {
+          font-size: 5em;
+          line-height: 1.6em;
+          color: #D8311E;
+        }
+      }
+
+      .link-box {
+        flex: 0 0 100px;
+
+        a {
+          display: block;
+          padding: 6px 32px;
+          box-sizing: border-box;
+          background-color: #fff;
+          border: 2px solid rgba(235, 143, 133, 0.788);
+          border-radius: 3em;
+          text-decoration: none;
+          color: #50505F;
+          font-size: 1.2em;
+
+          &:hover {
+            border: 2px solid #D8311E;
+          }
+
+          .icon {
+            padding-right: 6px;
+            width: 1.4em;
+            height: 1.4em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+          }
+        }
+      }
+
+      .team {
+        flex: 0 0 100px;
+        font-size: 1.4em;
+        font-family: KaiTi, FangSong;
+        color: #50505F;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .about-foot {
+    flex: 0 0 240px;
+    background-color: #08071E;
+
+    .about-foot-content {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 1000px;
+      height: 100%;
+      // background-color: #222244;
+
+      .foot-l {
+        width: 600px;
+        height: 100%;
+
+        .title {
+          margin: 30px 0 24px 0;
+          font-size: 18px;
+          color: #70707F;
+        }
+
+        p {
+          margin: 0 0 20px 0;
+          font-size: 12px;
+          line-height: 22px;
+          color: #70707F;
+        }
+      }
+
+      .foot-r {
+        width: 340px;
+        height: 100%;
+        // background-color: #080808;
+
+        .title {
+          margin: 30px 0 24px 0;
+          font-size: 18px;
+          color: #70707F;
+        }
+
+        .link-ul {
+          color: #fff;
+          width: 100%;
+          font-size: 12px;
+
+          li {
+            display: inline-block;
+            margin: 0 14px 5px 0;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            a {
+              text-decoration: none;
+              color: #70707F;
+
+              &:hover {
+                color: #A0A0AF;
+              }
+            }
+          }
+        }
+
+        .link-share {
+          margin: 30px 0;
+
+          a {
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            margin-right: 25px;
+            border-radius: 2em;
+            box-sizing: border-box;
+
+            &:hover {
+              .icon {
+                color: #A0A0AF;
+              }
+            }
+
+            .icon {
+              width: 38px;
+              height: 38px;
+              vertical-align: -0.15em;
+              font-size: 34px;
+              color: #70707f;
+              fill: currentColor;
+              overflow: hidden;
+              z-index: 100;
+            }
+          }
+
+          .blog {
+            background-color: #70707f;
+
+            &:hover {
+              background-color: #A0A0Af;
+
+              .icon {
+                color: #08071E;
+              }
+            }
+
+            .icon {
+              color: #08071E;
+            }
+          }
+
+          .wechat-hover {
+            position: relative;
+
+            .gap {
+              display: none;
+              position: absolute;
+              width: 42px;
+              height: 10px;
+              bottom: 38px;
+              overflow: hidden;
+            }
+
+            .img {
+              display: none;
+              position: absolute;
+              bottom: 48px;
+              width: 140px;
+              height: 140px;
+              background-color: #FFF;
+              background: url(./img/wechat.jpg);
+              background-size: cover;
+            }
+
+            &:hover {
+              .gap {
+                display: block;
+              }
+
+              .img {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

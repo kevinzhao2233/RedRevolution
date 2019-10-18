@@ -1,4 +1,3 @@
-import '../img/icon/iconfont';
 
 new Valine({
   av: AV,
@@ -63,7 +62,6 @@ const getComment = (commentLists) => {
   for (let com of commentLists) {
     comment.push(com.innerHTML.trim());    // 这里会返回一个数组长度，需要的时候记得过来
   }
-  console.log('comment[]', comment);
   return comment;
 }
 
@@ -72,14 +70,14 @@ const barrageAnimation = () => {
   const elementProp = getElementProp();
   const bulletMarginR = getComputedStyle(elementProp.bullet[0], null).marginRight; // 子弹 margin-right
   const comment = getComment(elementProp.commentLists);          // 保存着已经存在的评论，评论为带有 p 标签的
-  // commentBackup = [...comment];
+  console.log("弹幕主体函数取得的数组",comment);
   let index = 0;                      // 用来循环数组的变量
   let iconIndex = 0                   // 用来循环icon的变量
 
-  function loadComm() {
-    const comm = comment[index];
+  function loadComm(comments) {
+    const comm = comments[index];
     index++;
-    if (index >= comment.length) {
+    if (index >= comments.length - 1) {
       index = 0;
     }
     return comm;
@@ -93,7 +91,6 @@ const barrageAnimation = () => {
     }
     return icon;
   }
-
   setInterval(() => {
     for (let track of elementProp.track) {      // 遍历轨道
       if (track.lastElementChild) {
@@ -102,7 +99,7 @@ const barrageAnimation = () => {
           width: track.lastElementChild.clientWidth
         }
         if ((lastElem.clientLeft + lastElem.width + parseInt(bulletMarginR)) < (barrage.clientWidth + barrage.getBoundingClientRect().left)) {
-          const comm = loadComm();   // 获取到即将加载到屏幕的评论
+          const comm = loadComm(comment);   // 获取到即将加载到屏幕的评论
           const iconf = loadIcon(icon);
           if (newCommentValue == comm) {
             const newC = true;
@@ -146,7 +143,7 @@ const vlist = document.querySelector('.vlist');
 const Observer = new MutationObserver(function () {
   setTimeout(() => {
     barrageAnimation();
-  }, 200);
+  }, 1600);
 });
 Observer.observe(vlist, {
   childList: true,

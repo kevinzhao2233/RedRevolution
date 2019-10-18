@@ -149,14 +149,14 @@ FangSong;
     }
   }
 
-  .grid {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: url(./img/grid.png);
-    background-repeat: repeat;
-    z-index: 1;
-  }
+  // .grid {
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-image: url(./img/grid.png);
+  //   background-repeat: repeat;
+  //   z-index: 1;
+  // }
 
   .video-page-content {
     display: flex;
@@ -303,16 +303,14 @@ FangSong;
     width: 80%;
     background-color: #000;
     margin: 1em 2em;
-    border-radius: 1em;
-    overflow: hidden;
 
     video {
       width: 100%;
       height: 100%;
+      background-color: #000;
     }
   }
 }
-
 
 
 .video-p1 {

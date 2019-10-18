@@ -1,6 +1,9 @@
-div, input, form, button p, i, a, span, h1, h2, h3, h4, h5, img {
+div, input, form, button p, i, ul, li,  a, span, h1, h2, h3, h4, h5, img {
   margin: 0;
   padding: 0;
+}
+li {
+  list-style: none;
 }
 textarea {
   

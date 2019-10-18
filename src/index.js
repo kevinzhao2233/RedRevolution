@@ -2,6 +2,8 @@ import './style.scss';
 import 'pure-full-page/lib/pureFullPage.min.css';
 import PureFullPage from 'pure-full-page';
 import './js/coment';
+import './img/icon/iconfont';
+
 
 new PureFullPage().init();
 
@@ -10,7 +12,7 @@ loading.style.display = 'none';
 
 
 /* ============== 模拟点击事件 方便调试 ================*/
-const defaultPage = document.querySelectorAll('.nav-dot')[3];
+const defaultPage = document.querySelectorAll('.nav-dot')[1];
 
 const ev = new MouseEvent('click', {
   cancelable: true,
