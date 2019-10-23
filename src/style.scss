@@ -54,6 +54,7 @@ FangSong;
         color: $theme-color-2;
         font-weight: normal;
         text-shadow: 4px 4px 1px #FFF446;
+
         &:nth-child(2) {
           text-indent: 1em;
         }
@@ -280,6 +281,7 @@ FangSong;
           writing-mode: vertical-rl;
           writing-mode: tb-rl;
           white-space: pre;
+
           span {
             font-size: 1.4em;
           }

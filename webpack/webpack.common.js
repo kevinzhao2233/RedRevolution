@@ -20,8 +20,9 @@ module.exports = {
           // options: { 这里的内容会放到 .babelrc }
         }
       },
+
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|webp)$/,
         use: [
           {
             loader: 'file-loader',
@@ -30,7 +31,7 @@ module.exports = {
             }
           }
         ]
-      }
+      },
     ]
   },
   plugins: [

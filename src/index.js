@@ -7,12 +7,15 @@ import './img/icon/iconfont';
 
 new PureFullPage().init();
 
-const loading = document.querySelector('.loading');
-loading.style.display = 'none';
+setTimeout(() => {
+  const loading = document.querySelector('.loading');
+  loading.style.display = 'none';
+}, 1000);
 
 
-/* ============== 模拟点击事件 方便调试 ================*/
-const defaultPage = document.querySelectorAll('.nav-dot')[1];
+
+/* ============== 模拟点击事件 方便调试 ================
+const defaultPage = document.querySelectorAll('.nav-dot')[0];
 
 const ev = new MouseEvent('click', {
   cancelable: true,

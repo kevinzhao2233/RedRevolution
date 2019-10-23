@@ -143,7 +143,7 @@ const vlist = document.querySelector('.vlist');
 const Observer = new MutationObserver(function () {
   setTimeout(() => {
     barrageAnimation();
-  }, 1600);
+  }, 800);
 });
 Observer.observe(vlist, {
   childList: true,
