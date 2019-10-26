@@ -5,7 +5,7 @@ new Valine({
   app_id: 'kecLA3GMIVzqViqHjepNgM1t-gzGzoHsz', // APP ID
   app_key: 'znixXCJ81hDMfpLE84DvI710', // APP KEY
   placeholder: '在这里写下想对祖国或者先烈们说的话吧，最多50个字符哦', // 留言框占位提示文字
-  pageSize: 49
+  pageSize: 49  // 限制首次加载评论个数
 });
 
 // 弹幕文字前面的小图标
@@ -42,6 +42,7 @@ function createDocumentFragment(txt, icon, isNewCom) {      // 获取 Node 的�
   let newComClass = "";
   if (!!isNewCom) {
     newComClass = "active";
+    console.log("============================新的弹幕即将出现===========================");
   } else {
     newComClass = "";
   }
@@ -70,10 +71,10 @@ const barrageAnimation = () => {
   const elementProp = getElementProp();
   const bulletMarginR = getComputedStyle(elementProp.bullet[0], null).marginRight; // 子弹 margin-right
   const comment = getComment(elementProp.commentLists);          // 保存着已经存在的评论，评论为带有 p 标签的
-  console.log("弹幕主体函数取得的数组",comment);
+  console.log("========== 弹幕主体函数取得所有弹幕数组 ==========",comment);
   let index = 0;                      // 用来循环数组的变量
   let iconIndex = 0                   // 用来循环icon的变量
-
+  // ======== 加载弹幕
   function loadComm(comments) {
     const comm = comments[index];
     index++;
@@ -82,7 +83,7 @@ const barrageAnimation = () => {
     }
     return comm;
   }
-
+  // ========= 加载图标
   function loadIcon(icons) {
     const icon = icons[iconIndex];
     iconIndex++;
@@ -91,6 +92,7 @@ const barrageAnimation = () => {
     }
     return icon;
   }
+  // ========= 循环
   setInterval(() => {
     for (let track of elementProp.track) {      // 遍历轨道
       if (track.lastElementChild) {
