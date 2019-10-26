@@ -10,6 +10,7 @@
 
 在线查看 ⇢ [祭英烈 磅礴前行](https://kevin_zhao_2233.gitee.io/redrevolution/)
 
+
 ## 项目使用技术点
 webpack打包、ES6语法、Babel转译、Sass样式
 
@@ -30,6 +31,7 @@ cd RedRevolution
 npm install
 npm run dev
 ```
+
 
 ##### 注意，开发环境需要
 
