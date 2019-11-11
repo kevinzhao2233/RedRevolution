@@ -36,7 +36,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'My App',
+      title: '祭先烈 磅礴前行',
       filename: 'index.html',
       template: './public/index.html',
       chunks: ['index']

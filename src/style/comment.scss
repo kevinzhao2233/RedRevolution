@@ -33,7 +33,7 @@
     flex: 2;
     width: 1000px;
     background-color: rgba($color: #FF6600, $alpha: 0.1);
-    background: url(./img/2-2.jpg);
+    background: url(./img/2-2.webp);
     background-size: cover;
     border-radius: 1em;
     box-sizing: border-box;
@@ -63,7 +63,7 @@
         z-index: 100;
         white-space: nowrap;
         transform: translateX(1000px);
-        animation: barrage 16s .1s linear forwards;
+        animation: barrage 16s linear forwards;
 
 
         .icon {

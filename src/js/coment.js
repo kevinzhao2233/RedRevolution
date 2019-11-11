@@ -1,4 +1,3 @@
-
 new Valine({
   av: AV,
   el: '#comment', // 评论挂载点的 DOM
@@ -24,7 +23,7 @@ let newCommentValue = '';
 
 // ========== 为用户体验，限制评论的长度为50字；
 const editor = document.querySelector('#veditor');
-if (!!editor) {
+if (editor) {
   editor.maxLength = 50;
 }
 
@@ -40,7 +39,7 @@ function getElementProp() {
 // ========== 创建文档碎片，加入弹幕
 function createDocumentFragment(txt, icon, isNewCom) {      // 获取 Node 的字符串形式，转换成 Node 节点
   let newComClass = "";
-  if (!!isNewCom) {
+  if (isNewCom) {
     newComClass = "active";
     console.log("============================新的弹幕即将出现===========================");
   } else {
@@ -69,6 +68,7 @@ const getComment = (commentLists) => {
 // ========== 弹幕主体函数 =========== //
 const barrageAnimation = () => {
   const elementProp = getElementProp();
+  const barrage = elementProp.barrage;
   const bulletMarginR = getComputedStyle(elementProp.bullet[0], null).marginRight; // 子弹 margin-right
   const comment = getComment(elementProp.commentLists);          // 保存着已经存在的评论，评论为带有 p 标签的
   console.log("========== 弹幕主体函数取得所有弹幕数组 ==========",comment);
