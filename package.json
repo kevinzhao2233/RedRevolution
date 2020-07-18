@@ -8,7 +8,7 @@
     "babel-runtime": "^6.26.0",
     "core-js": "^3.2.1",
     "html-withimg-loader": "^0.1.16",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "pure-full-page": "^1.0.6",
     "regenerator-runtime": "^0.13.3",
     "slidePage": "^3.2.6"
